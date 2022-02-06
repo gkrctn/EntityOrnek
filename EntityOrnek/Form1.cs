@@ -66,5 +66,18 @@ namespace EntityOrnek
             MessageBox.Show("Öğrenci sistemden silindi");
 
         }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtOgrenciId.Text);
+            var x = db.TBLOGRENCI.Find(id);  //txtOgrenciId'ye girmiş olduğumuz Id değerine göre ilgili satırın kaydını tutuyor
+            x.AD = txtAd.Text;
+            x.SOYAD = txtSoyad.Text;
+            x.FOTOGRAF = txtFoto.Text;
+            db.SaveChanges();
+            MessageBox.Show("Öğrenci bilgileri başarıyla güncellendi.");
+
+
+        }
     }
 }
