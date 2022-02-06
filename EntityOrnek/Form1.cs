@@ -88,5 +88,14 @@ namespace EntityOrnek
         {
             dataGridView1.DataSource = db.TBLOGRENCI.Where(x => x.AD == txtAd.Text & x.SOYAD == txtSoyad.Text).ToList(); //x'e göndereceğimiz ifade; Adı, txtAd'a eşit olan değerleri listeleyecek.
         }
+
+        private void txtAd_TextChanged(object sender, EventArgs e)
+        {
+            string aranan = txtAd.Text;
+            var degerler = from item in db.TBLOGRENCI
+                           where item.AD.Contains(aranan) //contains methotu; ifadeyi içerenleri getirir.
+                           select item;  // txtAranan ifadesine eşit olan item'ları getirip, bu item'leri değerlere aktar.Sonrada dtGridte bu değerleri listele.
+            dataGridView1.DataSource = degerler.ToList();
+        }
     }
 }
