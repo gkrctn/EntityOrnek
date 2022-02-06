@@ -56,5 +56,15 @@ namespace EntityOrnek
             db.SaveChanges(); // değişiklikleri kaydet bunları veritabanına yansıt.
             MessageBox.Show("Öğrenci Listeye eklenmiştir.");
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtOgrenciId.Text);
+            var x = db.TBLOGRENCI.Find(id);  //ilk önce silmek istediğimiz ID'yi tutmamız gerekiyor.
+            db.TBLOGRENCI.Remove(x);
+            db.SaveChanges();
+            MessageBox.Show("Öğrenci sistemden silindi");
+
+        }
     }
 }
