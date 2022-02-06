@@ -77,7 +77,11 @@ namespace EntityOrnek
             db.SaveChanges();
             MessageBox.Show("Öğrenci bilgileri başarıyla güncellendi.");
 
+        }
 
+        private void btnProsedur_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = db.NOTLISTESI();
         }
     }
 }

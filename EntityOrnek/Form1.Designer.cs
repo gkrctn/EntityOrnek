@@ -64,6 +64,7 @@ namespace EntityOrnek
             this.btnDersListesi = new System.Windows.Forms.Button();
             this.btnNotListesi = new System.Windows.Forms.Button();
             this.btnNotGuncelle = new System.Windows.Forms.Button();
+            this.btnProsedur = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -392,11 +393,22 @@ namespace EntityOrnek
             this.btnNotGuncelle.Text = "Sınav Notu Güncelle";
             this.btnNotGuncelle.UseVisualStyleBackColor = true;
             // 
+            // btnProsedur
+            // 
+            this.btnProsedur.Location = new System.Drawing.Point(12, 372);
+            this.btnProsedur.Name = "btnProsedur";
+            this.btnProsedur.Size = new System.Drawing.Size(94, 23);
+            this.btnProsedur.TabIndex = 26;
+            this.btnProsedur.Text = "Prosedür";
+            this.btnProsedur.UseVisualStyleBackColor = true;
+            this.btnProsedur.Click += new System.EventHandler(this.btnProsedur_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 445);
+            this.Controls.Add(this.btnProsedur);
             this.Controls.Add(this.btnNotGuncelle);
             this.Controls.Add(this.btnNotListesi);
             this.Controls.Add(this.btnDersListesi);
@@ -459,6 +471,7 @@ namespace EntityOrnek
         private System.Windows.Forms.Button btnNotListesi;
         private System.Windows.Forms.Button btnHesapla;
         private System.Windows.Forms.Button btnNotGuncelle;
+        private System.Windows.Forms.Button btnProsedur;
     }
 }
 
