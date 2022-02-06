@@ -40,11 +40,21 @@ namespace EntityOrnek
         private void btnNotListesi_Click(object sender, EventArgs e)
         {
             //dataGridView1.DataSource = db.TBLNOTLAR.ToList();
-            var query = from item in db.TBLNOTLAR               //
+            var query = from item in db.TBLNOTLAR               // "item" değişken adıdır.
                         select new { item.NOTID, item.OGR, item.DERS, item.SINAV1, item.SINAV2, 
                             item.SINAV3,item.ORTALAMA , item.DURUM };  //süslü prnt. içerisinde bulunan alanları seç
             dataGridView1.DataSource = query.ToList(); // query'den gelen listeyi yazdır
 
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            TBLOGRENCI t = new TBLOGRENCI();
+            t.AD = txtAd.Text;
+            t.SOYAD = txtSoyad.Text;
+            db.TBLOGRENCI.Add(t);  
+            db.SaveChanges(); // değişiklikleri kaydet bunları veritabanına yansıt.
+            MessageBox.Show("Öğrenci Listeye eklenmiştir.");
         }
     }
 }
