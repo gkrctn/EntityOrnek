@@ -77,7 +77,7 @@ namespace EntityOrnek
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(608, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(572, 150);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnOgrenciListele
@@ -128,6 +128,7 @@ namespace EntityOrnek
             this.btnBul.TabIndex = 5;
             this.btnBul.Text = "Bul";
             this.btnBul.UseVisualStyleBackColor = true;
+            this.btnBul.Click += new System.EventHandler(this.btnBul_Click);
             // 
             // groupBox1
             // 
@@ -407,7 +408,7 @@ namespace EntityOrnek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 445);
+            this.ClientSize = new System.Drawing.Size(727, 426);
             this.Controls.Add(this.btnProsedur);
             this.Controls.Add(this.btnNotGuncelle);
             this.Controls.Add(this.btnNotListesi);

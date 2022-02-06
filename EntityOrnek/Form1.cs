@@ -83,5 +83,10 @@ namespace EntityOrnek
         {
             dataGridView1.DataSource = db.NOTLISTESI();
         }
+
+        private void btnBul_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = db.TBLOGRENCI.Where(x => x.AD == txtAd.Text & x.SOYAD == txtSoyad.Text).ToList(); //x'e göndereceğimiz ifade; Adı, txtAd'a eşit olan değerleri listeleyecek.
+        }
     }
 }
