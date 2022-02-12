@@ -97,5 +97,33 @@ namespace EntityOrnek
                            select item;  // txtAranan ifadesine eşit olan item'ları getirip, bu item'leri değerlere aktar.Sonrada dtGridte bu değerleri listele.
             dataGridView1.DataSource = degerler.ToList();
         }
+
+        private void btnLinqEntity_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked == true)
+            {
+               //Asc - Ascending sırlama
+                List<TBLOGRENCI> liste1 = db.TBLOGRENCI.OrderBy(p => p.AD).ToList(); //Ad'a göre sıraladığın parametreleri List olarak getir
+                dataGridView1.DataSource = liste1;
+            }
+
+            if (radioButton2.Checked == true)
+            {
+                //Desc - Descending sıralama
+                List<TBLOGRENCI> liste2 = db.TBLOGRENCI.OrderByDescending(p => p.AD).ToList();
+                dataGridView1.DataSource = liste2;
+
+            }
+            if (radioButton3.Checked == true)
+            {
+                List<TBLOGRENCI> liste3 = db.TBLOGRENCI.OrderBy(p => p.AD).Take(3).ToList();//Take methodu: Kaç tane eleman döndürmek istiyorsan yaz
+                dataGridView1.DataSource = liste3;
+            }
+            if (radioButton4.Checked == true )
+            {
+                List<TBLOGRENCI> liste4 = db.TBLOGRENCI.Where(p => p.ID == 5).ToList();
+                dataGridView1.DataSource = liste4;
+            }
+        }
     }
 }
