@@ -124,6 +124,27 @@ namespace EntityOrnek
                 List<TBLOGRENCI> liste4 = db.TBLOGRENCI.Where(p => p.ID == 5).ToList();
                 dataGridView1.DataSource = liste4;
             }
+            if (radioButton5.Checked == true)
+            {
+                List<TBLOGRENCI> liste5 = db.TBLOGRENCI.Where(p => p.AD.StartsWith("a")).ToList();  //başladığı değer a harfi olmalıdır.
+                dataGridView1.DataSource = liste5;
+            }
+            if (radioButton6.Checked == true)
+            {
+                List<TBLOGRENCI> liste6 = db.TBLOGRENCI.Where(p => p.AD.EndsWith("a")).ToList();  //bittiği değer a harfi olmalıdır.
+                dataGridView1.DataSource = liste6;
+            }
+            if (radioButton7.Checked == true)
+            {
+                bool deger = db.TBLKULUPLER.Any();// Any = hiç anlamdındadır. Hiç değer var mı 
+                MessageBox.Show(deger.ToString(),"Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            if (radioButton8.Checked == true)
+            {
+                int toplam = db.TBLOGRENCI.Count();// TblÖğrecinde ki Değerleri bize döndürsün 
+                MessageBox.Show(toplam.ToString(), "Toplam Öğrenci Sayısı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }
