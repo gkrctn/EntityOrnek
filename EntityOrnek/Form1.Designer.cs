@@ -63,7 +63,7 @@ namespace EntityOrnek
             this.label10 = new System.Windows.Forms.Label();
             this.btnDersListesi = new System.Windows.Forms.Button();
             this.btnNotListesi = new System.Windows.Forms.Button();
-            this.btnNotGuncelle = new System.Windows.Forms.Button();
+            this.btnJoin = new System.Windows.Forms.Button();
             this.btnProsedur = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.btnLinqEntity = new System.Windows.Forms.Button();
@@ -74,6 +74,9 @@ namespace EntityOrnek
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -395,14 +398,15 @@ namespace EntityOrnek
             this.btnNotListesi.UseVisualStyleBackColor = true;
             this.btnNotListesi.Click += new System.EventHandler(this.btnNotListesi_Click);
             // 
-            // btnNotGuncelle
+            // btnJoin
             // 
-            this.btnNotGuncelle.Location = new System.Drawing.Point(456, 343);
-            this.btnNotGuncelle.Name = "btnNotGuncelle";
-            this.btnNotGuncelle.Size = new System.Drawing.Size(115, 23);
-            this.btnNotGuncelle.TabIndex = 25;
-            this.btnNotGuncelle.Text = "Sınav Notu Güncelle";
-            this.btnNotGuncelle.UseVisualStyleBackColor = true;
+            this.btnJoin.Location = new System.Drawing.Point(456, 343);
+            this.btnJoin.Name = "btnJoin";
+            this.btnJoin.Size = new System.Drawing.Size(115, 23);
+            this.btnJoin.TabIndex = 25;
+            this.btnJoin.Text = "Join ile Getir";
+            this.btnJoin.UseVisualStyleBackColor = true;
+            this.btnJoin.Click += new System.EventHandler(this.btnJoin_Click);
             // 
             // btnProsedur
             // 
@@ -512,11 +516,47 @@ namespace EntityOrnek
             this.radioButton8.Text = "Toplam Öğrenci Sayısı";
             this.radioButton8.UseVisualStyleBackColor = true;
             // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Location = new System.Drawing.Point(601, 216);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(124, 17);
+            this.radioButton9.TabIndex = 36;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "Sınav1 Toplam Puan";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(601, 239);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(131, 17);
+            this.radioButton10.TabIndex = 37;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "Sınav1 Ortalama Puan";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.AutoSize = true;
+            this.radioButton11.Location = new System.Drawing.Point(601, 261);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(113, 17);
+            this.radioButton11.TabIndex = 38;
+            this.radioButton11.TabStop = true;
+            this.radioButton11.Text = "En Yüksek Sınav1";
+            this.radioButton11.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 426);
+            this.Controls.Add(this.radioButton11);
+            this.Controls.Add(this.radioButton10);
+            this.Controls.Add(this.radioButton9);
             this.Controls.Add(this.radioButton8);
             this.Controls.Add(this.radioButton7);
             this.Controls.Add(this.radioButton6);
@@ -527,7 +567,7 @@ namespace EntityOrnek
             this.Controls.Add(this.btnLinqEntity);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.btnProsedur);
-            this.Controls.Add(this.btnNotGuncelle);
+            this.Controls.Add(this.btnJoin);
             this.Controls.Add(this.btnNotListesi);
             this.Controls.Add(this.btnDersListesi);
             this.Controls.Add(this.groupBox3);
@@ -589,7 +629,7 @@ namespace EntityOrnek
         private System.Windows.Forms.Button btnDersListesi;
         private System.Windows.Forms.Button btnNotListesi;
         private System.Windows.Forms.Button btnHesapla;
-        private System.Windows.Forms.Button btnNotGuncelle;
+        private System.Windows.Forms.Button btnJoin;
         private System.Windows.Forms.Button btnProsedur;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button btnLinqEntity;
@@ -600,6 +640,9 @@ namespace EntityOrnek
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RadioButton radioButton7;
         private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton radioButton11;
     }
 }
 

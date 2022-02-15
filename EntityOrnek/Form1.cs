@@ -41,8 +41,17 @@ namespace EntityOrnek
         {
             //dataGridView1.DataSource = db.TBLNOTLAR.ToList();
             var query = from item in db.TBLNOTLAR               // "item" değişken adıdır.
-                        select new { item.NOTID, item.OGR, item.DERS, item.SINAV1, item.SINAV2, 
-                            item.SINAV3,item.ORTALAMA , item.DURUM };  //süslü prnt. içerisinde bulunan alanları seç
+                        select new { 
+                            item.NOTID, 
+                            item.TBLOGRENCI.AD, 
+                            item.TBLOGRENCI.SOYAD,
+                            item.TBLDERSLER.DERSAD, 
+                            item.SINAV1, 
+                            item.SINAV2, 
+                            item.SINAV3,
+                            item.ORTALAMA, 
+                            item.DURUM 
+                        };  //süslü prnt. içerisinde bulunan alanları seç
             dataGridView1.DataSource = query.ToList(); // query'den gelen listeyi yazdır
 
         }
@@ -144,7 +153,42 @@ namespace EntityOrnek
                 int toplam = db.TBLOGRENCI.Count();// TblÖğrecinde ki Değerleri bize döndürsün 
                 MessageBox.Show(toplam.ToString(), "Toplam Öğrenci Sayısı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            if (radioButton9.Checked == true)
+            {
+                var toplam = db.TBLNOTLAR.Sum(p => p.SINAV1); //Sınav1'den gelen değeri topla
+                MessageBox.Show("Toplam Sınav1 Puanı : " + toplam.ToString());
+            }
+            if (radioButton10.Checked == true)
+            {
+                var ortalama = db.TBLNOTLAR.Average(p => p.SINAV1);
+                MessageBox.Show("1.Sınavın ortalaması : " + ortalama.ToString());
+            }
+            if (radioButton11.Checked == true)
+            {
+                var enyuksek = db.TBLNOTLAR.Max(p => p.SINAV1);
+                MessageBox.Show("1.Sınavın En Yüksek Notu : " + enyuksek.ToString());
+            }
 
+        }
+
+        private void btnJoin_Click(object sender, EventArgs e)
+        {
+            var sorgu = from d1 in db.TBLNOTLAR
+                        join d2 in db.TBLOGRENCI  //tblNotlar tablosu ile tblÖğrenci tablosunu birleştirir.
+                        on d1.OGR equals d2.ID   //şart:Notlar(d1) tablosunda bulunan Ogr değerinin, d2 üzerinde bulunan ID eşit olması gerekiyor
+                        join d3 in db.TBLDERSLER
+                        on d1.DERS equals d3.DERSID
+                        select new
+                        {
+                            ÖĞRENCİ = d2.AD + " " + d2.SOYAD,
+                            DERS = d3.DERSAD,
+                            //SOYAD=d2.SOYAD,
+                            SINAV1 = d1.SINAV1,
+                            SINAV2 = d1.SINAV2,
+                            SINAV3 = d1.SINAV3,
+                            ORTALAMA = d1.ORTALAMA
+                        };
+            dataGridView1.DataSource = sorgu.ToList();
         }
     }
 }
